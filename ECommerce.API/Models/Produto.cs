@@ -16,5 +16,5 @@ public class Produto
     [Required]
     [Column(TypeName = "decimal(10,2)")]
     public decimal Preco { get; set; }
-    public int CategoriaId { get; set; }
+    public float Estoque { get; set; }
 }
