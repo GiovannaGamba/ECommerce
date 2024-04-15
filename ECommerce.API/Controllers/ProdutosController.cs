@@ -16,10 +16,10 @@ public class ProdutosController : ControllerBase
         _context = context;
     }
 
-    [HttpGet("{id:int:min(1)}", Name = "ObterProduto")]
-    public ActionResult<Produto> Get(int id)
+    [HttpGet("{nomeProduto}", Name = "ObterProduto")]
+    public ActionResult<Produto> Get(string nomeProduto)
     {
-        var produto = _context.Produtos.FirstOrDefault(p => p.ProdutoId == id);
+        var produto = _context.Produtos.FirstOrDefault(p => p.Nome == nomeProduto);
         if (produto == null)
         {
             return NotFound("Produto não encontrado...");
